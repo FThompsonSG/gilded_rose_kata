@@ -12,6 +12,18 @@ public class QualityAdjuster {
 
     }
 
+    public static void checkIsConjured(Item item) {
+
+        if (item.name.contains("Conjured")) {
+            if (item.sellIn > 0) {
+                item.quality--;
+            } else {
+                item.quality = item.quality - 2;
+            }
+        }
+
+    }
+
     public static void decreaseQuality(Item item) {
 
         if (item.quality > 0 && !Objects.equals(item.name, "Aged Brie") &&
@@ -19,9 +31,10 @@ public class QualityAdjuster {
             !Objects.equals(item.name, "Sulfuras, Hand of Ragnaros")) {
             if (item.sellIn > 0) {
                 item.quality--;
+                checkIsConjured(item);
             } else {
-                item.quality--;
-                item.quality--;
+                item.quality = item.quality - 2;
+                checkIsConjured(item);
             }
         }
 

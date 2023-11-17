@@ -21,7 +21,9 @@ class GildedRoseTest {
         new Item("Aged Brie", 5, 50),
         new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50),
         new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)};
+        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48),
+        new Item("Conjured Aged Meat", 10, 48),
+        new Item("Conjured Aged Meat", -2, 48)};
 
 
     GildedRose app = new GildedRose(items);
@@ -142,6 +144,20 @@ class GildedRoseTest {
     void backstagePassQualityLimitThirdTest() {
         app.updateQuality();
         assertEquals(50, items[12].quality);
+    }
+
+    @Test
+    @DisplayName("Conjured Quality Test")
+    void conjuredQualityTest() {
+        app.updateQuality();
+        assertEquals(46, items[13].quality);
+    }
+
+    @Test
+    @DisplayName("Conjured Quality Past sellIn Test")
+    void conjuredQualityPastSellInTest() {
+        app.updateQuality();
+        assertEquals(44, items[14].quality);
     }
 
 }
