@@ -18,8 +18,8 @@ class GildedRose {
 //                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 //                if (item.quality > 0) {
 //                    if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                        QualityAdjuster.decreaseQuality(item);
-                        QualityAdjuster.increaseQuality(item);
+            QualityAdjuster.decreaseQuality(item);
+            QualityAdjuster.increaseQuality(item);
 //                    }
 //                }
 //            } else {
@@ -42,14 +42,6 @@ class GildedRose {
 //                }
 //            }
 
-
-//            switch (item.name) {
-//                case "Aged Brie", "Backstage passes to a TAFKAL80ETC concert" -> {
-//                    if (item.quality > 0 )
-//                }
-//                break;
-//
-//            }
 
 //            if (item.sellIn < 0) {
 //                if (!item.name.equals("Aged Brie")) {

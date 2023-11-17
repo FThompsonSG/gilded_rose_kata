@@ -15,10 +15,13 @@ class GildedRoseTest {
         new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
         new Item("Sulfuras, Hand of Ragnaros", -1, 80),
         new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-        new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+        new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20),
+        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20),
         new Item("Aged Brie", 5, 49),
-        new Item("Aged Brie", 5, 50)};
+        new Item("Aged Brie", 5, 50),
+        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 50),
+        new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+        new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)};
 
 
     GildedRose app = new GildedRose(items);
@@ -103,14 +106,42 @@ class GildedRoseTest {
     @DisplayName("Backstage Pass Quality Test to confirm increase by 2")
     void backstagePassTwoIncreaseQualityTest() {
         app.updateQuality();
-        assertEquals(51, items[6].quality);
+        assertEquals(22, items[6].quality);
     }
 
     @Test
     @DisplayName("Backstage Pass Quality Test to confirm increase by 3")
     void backstagePassThreeIncreaseQualityTest() {
         app.updateQuality();
-        assertEquals(52, items[7].quality);
+        assertEquals(23, items[7].quality);
+    }
+
+    @Test
+    @DisplayName("Aged Brie Quality Limit Test")
+    void brieQualityLimitTest() {
+        app.updateQuality();
+        assertEquals(50, items[9].quality);
+    }
+
+    @Test
+    @DisplayName("Backstage Pass Quality Limit Test")
+    void backstagePassQualityLimitTest() {
+        app.updateQuality();
+        assertEquals(50, items[10].quality);
+    }
+
+    @Test
+    @DisplayName("Backstage Pass Quality Limit Second Test")
+    void backstagePassQualityLimitSecondTest() {
+        app.updateQuality();
+        assertEquals(50, items[11].quality);
+    }
+
+    @Test
+    @DisplayName("Backstage Pass Quality Limit Third Test")
+    void backstagePassQualityLimitThirdTest() {
+        app.updateQuality();
+        assertEquals(50, items[12].quality);
     }
 
 }
