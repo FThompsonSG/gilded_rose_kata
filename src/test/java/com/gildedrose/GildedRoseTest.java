@@ -90,10 +90,24 @@ class GildedRoseTest {
     }
 
     @Test
-    @DisplayName("Backstage Quality Test")
+    @DisplayName("Backstage Pass Quality Test")
     void backstagePassQualityTest() {
         app.updateQuality();
         assertEquals(21, items[5].quality);
+    }
+
+    @Test
+    @DisplayName("Backstage Pass Quality Test to confirm increase by 2")
+    void backstagePassTwoIncreaseQualityTest() {
+        app.updateQuality();
+        assertEquals(51, items[6].quality);
+    }
+
+    @Test
+    @DisplayName("Backstage Pass Quality Test to confirm increase by 3")
+    void backstagePassThreeIncreaseQualityTest() {
+        app.updateQuality();
+        assertEquals(52, items[7].quality);
     }
 
 }
