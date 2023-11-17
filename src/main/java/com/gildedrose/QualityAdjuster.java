@@ -24,10 +24,10 @@ public class QualityAdjuster {
         if (Objects.equals(item.name, "Backstage passes to a TAFKAL80ETC concert")) {
             if (item.sellIn > 10) {
                 item.quality++;
-            } else if (item.sellIn > 5 && item.sellIn <= 10) {
+            } else if (item.sellIn > 5) {
                 item.quality++;
                 item.quality++;
-            } else if (item.sellIn <= 5) {
+            } else if (item.sellIn > 0) {
                 item.quality++;
                 item.quality++;
                 item.quality++;
