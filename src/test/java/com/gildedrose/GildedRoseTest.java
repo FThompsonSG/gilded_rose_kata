@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -33,22 +34,38 @@ class GildedRoseTest {
 //    }
 
     @Test
+    @DisplayName("Standard Item Name Test")
     void nameTest() {
         app.updateQuality();
         assertEquals("+5 Dexterity Vest", items[0].name);
     }
 
     @Test
+    @DisplayName("Standard Item sellIn Test")
     void sellInTest() {
         app.updateQuality();
         assertEquals(9, items[0].sellIn);
     }
 
     @Test
+    @DisplayName("Standard Item Quality Test")
     void qualityTest() {
         app.updateQuality();
         assertEquals(19, items[0].quality);
     }
 
+    @Test
+    @DisplayName("Aged Brie sellIn Test")
+    void brieSellInTest() {
+        app.updateQuality();
+        assertEquals(1, items[1].sellIn);
+    }
+
+    @Test
+    @DisplayName("Aged Brie Quality Test")
+    void brieQualityTest() {
+        app.updateQuality();
+        assertEquals(1, items[1].quality);
+    }
 
 }

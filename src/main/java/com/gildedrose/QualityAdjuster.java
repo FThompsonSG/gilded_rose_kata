@@ -6,7 +6,9 @@ public class QualityAdjuster {
 
     public static void decreaseQuality(Item item) {
 
-        if (item.quality > 0) {
+        if (item.quality > 0 && !Objects.equals(item.name, "Aged Brie") &&
+            !Objects.equals(item.name, "Backstage passes to a TAFKAL80ETC concert") &&
+            !Objects.equals(item.name, "Sulfuras, Hand of Ragnaros")) {
             if (item.sellIn > 0) {
                 item.quality--;
             } else {
