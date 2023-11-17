@@ -21,7 +21,7 @@ public class QualityAdjuster {
 
     public static void increaseQuality(Item item) {
 
-        if (Objects.equals(item.name, "Backstage passes to a TAFKAL80ETC concert")) {
+        if (Objects.equals(item.name, "Backstage passes to a TAFKAL80ETC concert") && item.quality < 50) {
             if (item.sellIn > 10) {
                 item.quality++;
             } else if (item.sellIn > 5) {
@@ -34,7 +34,7 @@ public class QualityAdjuster {
             }
         }
 
-        if (Objects.equals(item.name, "Aged Brie")) {
+        if (Objects.equals(item.name, "Aged Brie") && item.quality < 50) {
             item.quality++;
         }
 
