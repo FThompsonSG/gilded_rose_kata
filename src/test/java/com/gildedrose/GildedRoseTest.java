@@ -68,4 +68,32 @@ class GildedRoseTest {
         assertEquals(1, items[1].quality);
     }
 
+    @Test
+    @DisplayName("Sulfuras sellIn Test")
+    void sulfurasSellInTest() {
+        app.updateQuality();
+        assertEquals(0, items[3].sellIn);
+    }
+
+    @Test
+    @DisplayName("Sulfuras Quality Test")
+    void sulfurasQualityTest() {
+        app.updateQuality();
+        assertEquals(80, items[3].quality);
+    }
+
+    @Test
+    @DisplayName("Backstage Pass sellIn Test")
+    void backstagePassSellInTest() {
+        app.updateQuality();
+        assertEquals(14, items[5].sellIn);
+    }
+
+    @Test
+    @DisplayName("Backstage Quality Test")
+    void backstagePassQualityTest() {
+        app.updateQuality();
+        assertEquals(21, items[5].quality);
+    }
+
 }

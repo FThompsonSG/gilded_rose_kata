@@ -22,7 +22,9 @@ public class QualityAdjuster {
     public static void increaseQuality(Item item) {
 
         if (Objects.equals(item.name, "Backstage passes to a TAFKAL80ETC concert")) {
-            if (item.sellIn <= 10 && item.sellIn > 5) {
+            if (item.sellIn > 10) {
+                item.quality++;
+            } else if (item.sellIn > 5 && item.sellIn <= 10) {
                 item.quality++;
                 item.quality++;
             } else if (item.sellIn <= 5) {
