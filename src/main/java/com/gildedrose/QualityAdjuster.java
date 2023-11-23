@@ -1,10 +1,21 @@
 package com.gildedrose;
 
+import com.gildedrose.logger.ConsoleHandlerSetup;
+import com.gildedrose.logger.FileHandlerSetup;
+import com.gildedrose.logger.LoggerSetup;
+
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public class QualityAdjuster {
 
+    public static final Logger logger = Logger.getLogger(QualityAdjuster.class.getName());
+
     public static void qualityCapCheck(Item item) {
+
+        LoggerSetup.setupLogger(logger);
+        FileHandlerSetup.setupFileHandler(logger);
+        ConsoleHandlerSetup.setupConsoleHandler(logger);
 
         if (item.quality > 50) {
             item.quality = 50;
